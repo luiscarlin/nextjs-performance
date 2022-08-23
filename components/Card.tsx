@@ -28,7 +28,7 @@ const styles = css`
     height: 400px;
     width: 350px;
     min-width: 350px;
-    overflow: hidden;
+    overflow: hidden auto;
     padding: 20px;
     position: relative;
   }

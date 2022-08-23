@@ -1,5 +1,5 @@
 import { ApolloProvider } from '@apollo/client';
-import type { AppProps } from 'next/app';
+import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import client from '../apollo-client';
 import Layout from '../components/Layout';
 import '../scripts/wdyr';
@@ -12,6 +12,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Layout>
     </ApolloProvider>
   );
+}
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  if (process.env.NODE_ENV === 'development') {
+    console.log(metric);
+  }
 }
 
 export default MyApp;

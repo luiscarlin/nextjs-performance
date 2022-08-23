@@ -1,5 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
-import { memo, useState } from 'react';
+import { useState } from 'react';
 
 const GET_COUNTRIES = gql`
   query Countries {
@@ -24,7 +24,7 @@ const WithGraphQL = () => {
 };
 
 // eslint-disable-next-line react/display-name
-const Countries = memo(() => {
+const Countries = () => {
   const { data, loading, error } = useQuery(GET_COUNTRIES, {
     fetchPolicy: 'network-only',
   });
@@ -51,7 +51,7 @@ const Countries = memo(() => {
       })}
     </>
   );
-});
+};
 
 // WithGraphQL.whyDidYouRender = true;
 
